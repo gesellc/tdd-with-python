@@ -2,9 +2,9 @@
 
 In this repository I will work through Harry J.W. Percival's book "Test-Driven Development with Python".
 
-The book's home planet is here: http://www.obeythetestinggoat.com/
+Go and visit the book's home planet: http://www.obeythetestinggoat.com/
 
-## Useful Commands and Concepts
+## Useful Commands
 
 * Running the Django dev server
 
