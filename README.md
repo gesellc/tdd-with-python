@@ -1,4 +1,4 @@
-# Test-Driven Development with python
+# Test-Driven Development with Python
 
 In this repository I will work through Harry J.W. Percival's book "Test-Driven Development with Python".
 
