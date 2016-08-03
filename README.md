@@ -31,9 +31,3 @@ Go and visit the book's home planet: http://www.obeythetestinggoat.com/
 * Running the unit tests
 
         python3 manage.py test
-
-## The unit-test/code cycle
-
-1. Run the unit tests in the terminal.
-2. Make a minimal code change in the editor.
-3. Repeat!
