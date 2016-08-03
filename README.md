@@ -6,7 +6,7 @@ Go and visit the book's home planet: http://www.obeythetestinggoat.com/
 
 ## Play with the app locally
 
-* Check prerequisites
+* Check prerequisites (you might only need Django for now)
 
   http://www.obeythetestinggoat.com/book/pre-requisite-installations.html#_required_software_installations
 
