@@ -32,4 +32,4 @@ Go and visit the book's home planet: http://www.obeythetestinggoat.com/
 
         python3 manage.py test
 
-Whatever...
+Whatever... This is only a test
