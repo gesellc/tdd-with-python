@@ -31,5 +31,3 @@ Go and visit the book's home planet: http://www.obeythetestinggoat.com/
 * Running the unit tests
 
         python3 manage.py test
-
-Whatever... This is only a test
