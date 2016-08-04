@@ -26,3 +26,8 @@ class HomePageTest(TestCase):
         response = home_page(request)
 
         self.assertEqual('A new list item', response.content.decode())
+        expected_html = render_to_string(
+            'home.html',
+            {'new_item_text': 'A new list item'}
+        )
+        self.assertEqual(response.content.decode(), expected_html)
