@@ -2,6 +2,9 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 import unittest
 
+# TODO: Display multiple items in the table
+# TODO: Support more than one list!
+
 class NewVisitorTest(unittest.TestCase):
 
     def setUp(self):
