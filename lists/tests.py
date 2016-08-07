@@ -30,7 +30,14 @@ class HomePageTest(TestCase):
         self.assertEqual(Item.objects.count(), 1)
         new_item = Item.objects.first()
         self.assertEqual(new_item.text, 'A new list item')
-        # TODO: Code smell: POST test is too long?
+
+    def test_home_page_redirects_after_POST(self):
+        request = HttpRequest()
+        request.method = 'POST'
+        request.POST['item_text'] = 'A new list item'
+        # TODO: read https://docs.djangoproject.com/en/1.8/ref/request-response/
+
+        response = home_page(request)
 
         self.assertEqual(response.status_code, 302) # 302: HTTP redirect
         self.assertEqual(response['location'], '/')
