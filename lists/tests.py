@@ -35,7 +35,6 @@ class HomePageTest(TestCase):
         request = HttpRequest()
         request.method = 'POST'
         request.POST['item_text'] = 'A new list item'
-        # TODO: read https://docs.djangoproject.com/en/1.8/ref/request-response/
 
         response = home_page(request)
 
@@ -50,6 +49,16 @@ class HomePageTest(TestCase):
 
         home_page(request)
         self.assertEqual(Item.objects.count(), 0)
+
+    def test_home_page_displays_all_list_items(self):
+        Item.objects.create(text='item 1')
+        Item.objects.create(text='item 2')
+
+        request = HttpRequest()
+        response = home_page(request)
+
+        self.assertIn('item 1', response.content.decode())
+        self.assertIn('item 2', response.content.decode())
 
 class ItemModelTest(TestCase):
 
