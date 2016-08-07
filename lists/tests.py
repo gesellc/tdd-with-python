@@ -35,7 +35,6 @@ class HomePageTest(TestCase):
         request = HttpRequest()
         request.method = 'POST'
         request.POST['item_text'] = 'A new list item'
-        # TODO: read https://docs.djangoproject.com/en/1.8/ref/request-response/
 
         response = home_page(request)
 
