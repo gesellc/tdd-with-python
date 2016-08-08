@@ -26,7 +26,7 @@ Go and visit the book's home planet: http://www.obeythetestinggoat.com/
 
 * Running the functional tests
 
-        python3 functional_tests.py
+        python3 manage.py test functional_tests
 
 * Running the unit tests
 
