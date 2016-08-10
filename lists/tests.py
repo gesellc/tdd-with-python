@@ -45,8 +45,7 @@ class NewListTest(TestCase):
             '/lists/new',
             data={'item_text': 'A new list item'}
         )
-        self.assertEqual(response.status_code, 302) # 302: HTTP redirect
-        self.assertEqual(response['location'], 'lists/the-only-list-in-the-world')
+        self.assertRedirects(response, '/lists/the-only-list-in-the-world/')
 
 
 class ListViewTest(TestCase):
