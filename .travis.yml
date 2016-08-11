@@ -1,12 +1,12 @@
 language: python
-dist: trusty
-sudo: required
+#dist: trusty
+#sudo: required
 
 python:
     - "3.5"
 
 install:
-    - sudo pip install 'django<1.9'
-    - sudo pip install --upgrade selenium
+    - pip install 'django<1.9'
+    - pip install --upgrade selenium
 
 script: python manage.py test lists
