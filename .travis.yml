@@ -9,4 +9,6 @@ install:
     - pip install 'django<1.9'
     - pip install --upgrade selenium
 
-script: python manage.py test lists
+script:
+    - python manage.py test lists
+    - python manage.py test functional_tests
