@@ -1,0 +1,10 @@
+language: python
+
+python:
+    - "3.5"
+
+install:
+    - sudo pip install 'django<1.9'
+    - sudo pip install --upgrade selenium
+
+script: python manage.py test lists
