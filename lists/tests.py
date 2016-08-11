@@ -19,14 +19,6 @@ class HomePageTest(TestCase):
         expected_html = render_to_string('home.html')
         self.assertEqual(response.content.decode(), expected_html)
 
-    def test_home_page_only_saves_items_when_necessary(self):
-        request = HttpRequest()
-        # TODO: why do we not need these two line in this test?
-        # request.method = 'POST'
-        # request.POST['item_text'] = ''
-
-        home_page(request)
-        self.assertEqual(Item.objects.count(), 0)
 
 class NewListTest(TestCase):
 
