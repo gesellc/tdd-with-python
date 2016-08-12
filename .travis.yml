@@ -5,8 +5,8 @@ sudo: required
 python:
     - "3.5.0"
 
-addons:
-  firefox: latest
+#addons:
+#  firefox: latest ## fails travis build (firefox-48.0.tar.bz2 on 2016-08-12)
 
 install:
     - pip install 'django<1.9'
