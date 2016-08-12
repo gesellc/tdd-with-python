@@ -5,6 +5,9 @@ language: python
 python:
     - "3.5"
 
+addons:
+  firefox: latest
+
 install:
     - pip install 'django<1.9'
     - pip install --upgrade selenium
