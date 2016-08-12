@@ -21,4 +21,4 @@ script:
     - python --version
     - python3 --version
     - python manage.py test lists
-    - xvfb-run python manage.py test functional_tests
+    - xvfb-run -a python manage.py test functional_tests
