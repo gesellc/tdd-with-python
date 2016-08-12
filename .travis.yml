@@ -5,8 +5,8 @@ sudo: required
 python:
     - "3.5.0"
 
-#addons:
-#  firefox: latest
+addons:
+  firefox: latest
 
 install:
     - pip install 'django<1.9'
