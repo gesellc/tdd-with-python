@@ -19,4 +19,4 @@ before_script:
 
 script:
     - python manage.py test lists
-    - python manage.py test functional_tests
+    - xvfb-run python manage.py test functional_tests
