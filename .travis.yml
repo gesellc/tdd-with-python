@@ -10,7 +10,7 @@ addons:
 
 install:
     - pip install 'django<1.9'
-    - pip install --upgrade selenium
+    - pip install selenium==2.39
 
 before_script:
   - "export DISPLAY=:99.0"
