@@ -12,6 +12,11 @@ install:
     - pip install 'django<1.9'
     - pip install --upgrade selenium
 
+before_script:
+  - "export DISPLAY=:99.0"
+  - "sh -e /etc/init.d/xvfb start"
+  - sleep 3 # give xvfb some time to start
+
 script:
     - python manage.py test lists
     - python manage.py test functional_tests
