@@ -18,5 +18,7 @@ before_script:
   - sleep 3 # give xvfb some time to start
 
 script:
+    - python --version
+    - python3 --version
     - python manage.py test lists
     - xvfb-run python manage.py test functional_tests
