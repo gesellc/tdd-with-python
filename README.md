@@ -7,7 +7,7 @@ Go and visit the book's home planet: http://www.obeythetestinggoat.com/
 ## Check Status
 
 [![Build
-Status](https://travis-ci.org/gesellc/tdd-with-python.svg?branch=Integrate-Travis-CI)](https://travis-ci.org/gesellc/tdd-with-python)
+Status](https://travis-ci.org/gesellc/tdd-with-python.svg?branch=master)](https://travis-ci.org/gesellc/tdd-with-python)
 
 ## Play with the app locally
 
