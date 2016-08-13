@@ -4,6 +4,11 @@ In this repository I will work through Harry J.W. Percival's book "Test-Driven D
 
 Go and visit the book's home planet: http://www.obeythetestinggoat.com/
 
+## Check Status
+
+[![Build
+Status](https://travis-ci.org/gesellc/tdd-with-python.svg?branch=Integrate-Travis-CI)](https://travis-ci.org/gesellc/tdd-with-python)
+
 ## Play with the app locally
 
 * Check prerequisites (you might only need Django for now)
