@@ -19,9 +19,9 @@ before_script:
 #  - sleep 3  # give xvfb some time to start
 
 script:
-    - coverage run manage.py version
-    - coverage run --source='.' manage.py test functional_tests
     - coverage run --source='.' manage.py test lists
+    - coverage run --source='.' manage.py test lists
+    - coverage run --source='.' manage.py test functional_tests
 
 after_success:
   coveralls
