@@ -1,6 +1,6 @@
 language: python
-#dist: trusty
 sudo: required
+#dist: trusty
 
 python:
     - "3.5.0"
