@@ -7,7 +7,7 @@ Go and visit the book's home planet: http://www.obeythetestinggoat.com/
 ## Check Status
 
 [![Build
-Status](https://travis-ci.org/gesellc/tdd-with-python.svg?branch=Integrate-Travis-CI)](https://travis-ci.org/gesellc/tdd-with-python)
+Status](https://travis-ci.org/gesellc/tdd-with-python.svg?branch=Integrate-Coveralls)](https://travis-ci.org/gesellc/tdd-with-python) [![Coverage Status](https://coveralls.io/repos/github/gesellc/tdd-with-python/badge.svg?branch=Integrate-Coveralls)](https://coveralls.io/github/gesellc/tdd-with-python?branch=Integrate-Coveralls)
 
 ## Play with the app locally
 
