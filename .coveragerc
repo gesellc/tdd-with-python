@@ -1,5 +1,6 @@
 # .coveragerc to control coverage.py
 [run]
+branch = false
 source = .
 omit =
     */manage.py
