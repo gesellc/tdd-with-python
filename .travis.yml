@@ -11,6 +11,7 @@ python:
 install:
     - pip install 'django<1.9'
     - pip install --upgrade selenium
+    - pip install coveralls
 
 before_script:
   - "export DISPLAY=:99.0"
@@ -18,5 +19,9 @@ before_script:
 #  - sleep 3  # give xvfb some time to start
 
 script:
-    - python manage.py test lists
-    - python manage.py test functional_tests
+    - coverage run -a manage.py test lists
+    - coverage run -a manage.py test functional_tests
+
+after_success:
+- coverage report
+- coveralls

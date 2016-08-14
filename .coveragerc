@@ -1,0 +1,8 @@
+# .coveragerc to control coverage.py
+[run]
+branch = False
+source = .
+omit =
+    */manage.py
+    */apps.py
+    */wsgi.py
