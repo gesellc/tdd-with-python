@@ -23,4 +23,5 @@ script:
     - coverage run -a manage.py test functional_tests
 
 after_success:
-  coveralls
+- coverage report
+- coveralls
