@@ -1,27 +1,22 @@
 language: python
 sudo: required
-#dist: trusty
 
 python:
-    - "3.5.0"
-
-#addons:
-#  firefox: latest ## fails travis build (firefox-48.0.tar.bz2 on 2016-08-12)
+  - "3.5.0"
 
 install:
-    - pip install 'django<1.9'
-    - pip install --upgrade selenium
-    - pip install coveralls
+  - pip install 'django<1.9'
+  - pip install --upgrade selenium
+  - pip install coveralls
 
 before_script:
   - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"
-#  - sleep 3  # give xvfb some time to start
 
 script:
-    - coverage run -a manage.py test lists
-    - coverage run -a manage.py test functional_tests
+  - coverage run -a manage.py test lists
+  - coverage run -a manage.py test functional_tests
 
 after_success:
-- coverage report
-- coveralls
+  - coverage report
+  - coveralls
