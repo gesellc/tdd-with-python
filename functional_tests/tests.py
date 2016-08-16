@@ -92,7 +92,6 @@ class NewVisitorTest(StaticLiveServerTestCase):
         # Satisfied, they both go back to sleep
 
 
-    @unittest.expectedFailure
     def test_layout_and_styling(self):
         # Edith goes to the home page
         self.browser.get(self.live_server_url)
