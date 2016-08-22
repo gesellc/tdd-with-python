@@ -1,9 +1,11 @@
 from unittest import skip
 from .base import FunctionalTest
 from selenium.webdriver.common.keys import Keys
+import unittest
 
 class ItemValidationTest(FunctionalTest):
 
+    @unittest.expectedFailure
     def test_cannot_add_empty_list_items(self):
         # Edith goes to the home page and accidentally tries to submit
         # an empty list item. She hits Enter on the empty input box
