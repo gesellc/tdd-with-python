@@ -2,7 +2,7 @@ language: python
 sudo: required
 
 python:
-  - "3.5.0"
+  - "3"
 
 install:
   - pip install 'django<1.9'
