@@ -1,9 +1,6 @@
 language: python
 sudo: required
 
-python:
-  - "3"
-
 install:
   - pip install 'django<1.9'
   - pip install --upgrade selenium
