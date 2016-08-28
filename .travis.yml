@@ -21,5 +21,3 @@ before_install:
 deploy:
   provider: script
   script: deploy_tools/deploy.sh
-  on:
-    branch: use-travis-ci-for-deployment
