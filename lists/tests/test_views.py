@@ -27,7 +27,7 @@ class NewListTest(TestCase):
         # TODO: read https://docs.djangoproject.com/en/1.8/ref/request-response/
         self.client.post(
             '/lists/new',
-            data={'item_text': 'A new list item'}
+            data={'text': 'A new list item'}
         )
         self.assertEqual(Item.objects.count(), 1)
         new_item = Item.objects.first()
@@ -36,7 +36,7 @@ class NewListTest(TestCase):
     def test_redirects_after_POST(self):
         response = self.client.post(
             '/lists/new',
-            data={'item_text': 'A new list item'}
+            data={'text': 'A new list item'}
         )
         new_list = List.objects.first()
         self.assertRedirects(response, '/lists/%d/' % (new_list.id,))
