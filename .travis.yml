@@ -18,3 +18,8 @@ after_success:
 before_install:
 - openssl aes-256-cbc -K $encrypted_884abc9aece8_key -iv $encrypted_884abc9aece8_iv
   -in deploy_tools/deploy_key.enc -out deploy_tools/deploy_key -d
+deploy:
+  provider: script
+  script: deploy_tools/deploy.sh
+  on:
+    branch: use-travis-ci-for-deployment
