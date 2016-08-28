@@ -6,7 +6,7 @@ install:
 - pip install 'django<1.9'
 - pip install --upgrade selenium
 - pip install coveralls
-- pip install fabric
+- pip2 install fabric
 before_script:
 - export DISPLAY=:99.0
 - sh -e /etc/init.d/xvfb start
@@ -16,7 +16,7 @@ script:
 after_success:
 - coverage report
 - coveralls
-- fab -i deploy_tools/deploy_key deploy:host=$DEPLOY_PRODUCTION_USER@$DEPLOY_PRODUCITON_HOST
+- fab -f deploy_tools/fabfile.py -i deploy_tools/deploy_key deploy:host=$DEPLOY_PRODUCTION_USER@$DEPLOY_PRODUCITON_HOST
 
 before_install:
 - openssl aes-256-cbc -K $encrypted_884abc9aece8_key -iv $encrypted_884abc9aece8_iv
