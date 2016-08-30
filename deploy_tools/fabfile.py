@@ -62,5 +62,5 @@ def _update_database(source_folder):
     ))
 
 def _restart_server(site_name):
-    sudo('service nginx reload')
-    sudo('start gunicorn-%s', (site_name,))
+    run('sudo service nginx reload')
+    run('sudo restart gunicorn-%s' % (site_name,))
