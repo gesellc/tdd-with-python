@@ -41,3 +41,17 @@ class ListAndItemModelTest(TestCase):
     def test_get_absolute_url(self):
         list_ = List.objects.create()
         self.assertEqual(list_.get_absolute_url(), '/lists/%d/' % (list_.id,))
+
+    def test_duplicate_items_are_invalid(self):
+        list_ = List.objects.create()
+        Item.objects.create(list=list_, text='bla')
+        with self.assertRaises(ValidationError):
+            item = Item(list=list_, text='bla')
+            item.full_clean()
+
+    def test_CAN_save_same_item_to_different_lists(self):
+        list1 = List.objects.create()
+        list2 = List.objects.create()
+        Item.objects.create(list=list1, text='bla')
+        item = Item(list=list2, text='bla') # TODO: check why we do not use Item.objects.create() here
+        item.full_clean()  # should not raise
