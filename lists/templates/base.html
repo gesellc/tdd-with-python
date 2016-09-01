@@ -11,11 +11,17 @@
 </head>
 
 <body>
+    <div class="alert alert-success text-center">
+        <strong>Last deployment: 2016-09-02 12:05</strong>
+        <!-- Git Commit Travis Build -->
+    </div>
 <div class="container">
 
     <div class="row">
         <div class="col-md-6 col-md-offset-3 jumbotron">
             <div class="text-center">
+                <!--        <strong>Last deployment: Today!</strong>   -->
+                <!-- <span class="label label-primary">Last deployment 2016-09-02</span> -->
                 <h1>{% block header_text %}{% endblock %}</h1>
                 <form method="POST" action="{% block form_action %}{% endblock %}">
                     {{ form.text }}
