@@ -42,7 +42,7 @@ class ItemModelTest(TestCase):
         item2 = Item.objects.create(list=list1, text='item 2')
         item3 = Item.objects.create(list=list1, text='three')
         self.assertEqual(
-            list(Item.objects.all()),  # convert queriset to list because
+            list(Item.objects.all()),  # convert queryset to list because
             [item1, item2, item3]      # querisets don't compare well with lists
         )
 
