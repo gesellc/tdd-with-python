@@ -21,7 +21,8 @@ script:
 after_success:
   - coverage report
   - coveralls
-  - fab -f deploy_tools/fabfile.py -i deploy_tools/deploy_key deploy:host=$DEPLOY_PRODUCTION_USER@$DEPLOY_PRODUCTION_HOST
+  - fab -f deploy_tools/fabfile.py -i deploy_tools/deploy_key deploy:host=$DEPLOY_PRODUCTION_USER@$DEPLOY_PRODUCTION_HOST | sed s/$DEPLOY_PRODUCTION_USER/[secret]/g | sed s/$DEPLOY_PRODUCTION_HOST/[secret]/g
+
 
 before_install:
   - openssl aes-256-cbc -K $encrypted_884abc9aece8_key -iv $encrypted_884abc9aece8_iv -in deploy_tools/deploy_key.enc -out deploy_tools/deploy_key -d
