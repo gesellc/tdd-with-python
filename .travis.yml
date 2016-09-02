@@ -21,7 +21,7 @@ script:
 after_success:
   - coverage report
   - coveralls
-  - fab -f deploy_tools/fabfile.py -i deploy_tools/deploy_key deploy:host=$DEPLOY_PRODUCTION_USER@$DEPLOY_PRODUCTION_HOST | sed s/$DEPLOY_PRODUCTION_USER/[secret]/g | sed s/$DEPLOY_PRODUCTION_HOST/[secret]/g
+  - fab -f deploy_tools/fabfile.py -i deploy_tools/deploy_key deploy:host=$DEPLOY_PRODUCTION_USER@$DEPLOY_PRODUCTION_HOST | sed s/$DEPLOY_PRODUCTION_USER/[secure]/g | sed s/$DEPLOY_PRODUCTION_HOST/[secure]/g
 
 
 before_install:
