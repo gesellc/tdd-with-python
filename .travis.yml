@@ -4,10 +4,19 @@ sudo: required
 python:
   - '3.5'
 
+env:
+  global:
+  - secure: Aj2CINqg677ddhoRhlWkOCa5htq+OMd6SIwnq/0odals3Zr51oy2BFvUCRu65jkf2vSiXBmZODhdOsIe3/Po9wAnjdKbcaD0PlfMDgsbnAaj9Jfek2MrmgXUv5BaBfR+pYzn8wONnAlFCLALAp1QIgH/ac2JYK7HJEl/ZB/BPwcI+wNkm8AlXunfKwIMqCMMlxbkHPnd7Cq3bJQfzVsOkKAFduFAuEPN35z9+Lb7uKQuYzlxSn8BmIEd93yE4YnIErbwUrW13nRdQPUuGmOVdTG5AS/1+yRkf73K/Zs7/nZJA6VWVF2og3/WIgPeImdM4H/7aLYyRoqR7OQR2ZCEVE3PGNj+M+JuFHtFM6vfZxjq8vBQ3tHQbaeXYwrojJ23BJA/RggNVOIRGSb8IoNq9D8br88j6YHow2bFP6l6L9ns4BedJcUwDw/RAEpVdUGidmxKlW522UFFhHlCgUiIZhwHPE5JIxmSC7QHG6nVJIXSrM/M6DGBuP263xfow6UNrbRZ5uuAWDc8TBHgAp5LVgf+9SS77Rv17kuG8seoQirNpnLp4UCET1aA/M+w+MzFDC+HvQlzfZMKL1a34lZjjRNOyMiZcJFR7GKlD0D2QPYfCqkaUwBheLFOfWYC7ITgkqRBW3MQi3sOqbN164deMPN3ekVOF4056x9EChD04tA=
+  - secure: XMZuZGpBkNVju/0eX8tJ3MvklbIDu6tRNN8fVrSjtqtz/S8oDnUYcvcDQyU3MikUYQbOXA7EYCcZbO3HMrGsIweM1X5AW7r/3+d/05FjhiB2w9VdWann9BGfRrq19xFDU7GIuh9I5qk2gpOLxBN1LgnmCxKTUkFBb2CrBfyVM+Avn4sIVwxHET3En9vIxrl40YzQENnjDMMkKsafCTQXAYbHEG3MWUg2yC98FeuKI4ZWXMx8hY3ENiPVqSoxrqTSVUb8uZU8g1srxpB9+cc3x8IfIQYMQiIjgdgVEzl2AphtpVLgLowKoMsW/wpGBYP9g771kXXS5g9ronzsL38H3sAfa65g2Q7Unw6u6n2z6EVlRb5wo9rmOq01YOuSLQRasi07dPgYqYfmW3OeKpgJ9VHKaCOij4VzvdIWQWEIw3YzrJYwM42q8rxJbuyzRh5wNzaKv628lG6T8I0K/csdjeeILnKB6MO799jRYZ082OMyAfGmGHkb3zao4kg4w8ezyy3b32wHbvvPE1fU369Mk1xnS15Bo57utHuZJ9DYX0ae9Z1REGfWiIplCwgLcvqzZJYDqXotQaGckThYMJqULb7VlO+t62gMCXLTsslQd/IOm777YRGI5BkK5TSa647Nt3kZvbFi3tBOWD9bxqUPj6IjLGmIrkBOLDsTspT9O6E=
+
+before_install:
+  - openssl aes-256-cbc -K $encrypted_884abc9aece8_key -iv $encrypted_884abc9aece8_iv -in deploy_tools/deploy_key.enc -out deploy_tools/deploy_key -d
+
 install:
   - pip install 'django<1.9'
   - pip install --upgrade selenium
   - pip install coveralls
+  - pip2 install fabric
 
 before_script:
   - export DISPLAY=:99.0
@@ -20,3 +29,4 @@ script:
 after_success:
   - coverage report
   - coveralls
+  - fab -f deploy_tools/fabfile.py -i deploy_tools/deploy_key deploy:host=$DEPLOY_PRODUCTION_USER@$DEPLOY_PRODUCTION_HOST | sed s/$DEPLOY_PRODUCTION_USER/[secure]/g | sed s/$DEPLOY_PRODUCTION_HOST/[secure]/g
