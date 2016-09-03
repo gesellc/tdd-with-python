@@ -6,7 +6,8 @@ Go and visit the book's home planet: http://www.obeythetestinggoat.com/
 
 ## Check Status
 
-[![Build Status](https://travis-ci.org/gesellc/tdd-with-python.svg?branch=master)](https://travis-ci.org/gesellc/tdd-with-python) [![Coverage Status](https://coveralls.io/repos/github/gesellc/tdd-with-python/badge.svg?branch=master)](https://coveralls.io/github/gesellc/tdd-with-python?branch=master)
+[![Build Status](https://travis-ci.org/gesellc/tdd-with-python.svg?branch=master)](https://travis-ci.org/gesellc/tdd-with-python) [![Coverage Status](https://coveralls.io/repos/github/gesellc/tdd-with-python/badge.svg?branch=master)](https://coveralls.io/github/gesellc/tdd-with-python?branch=master) [![Code Health](https://landscape.io/github/gesellc/tdd-with-python/master/landscape.svg?style=flat)](https://landscape.io/github/gesellc/tdd-with-python/master)
+
 
 ## Play with the app locally
 
@@ -22,16 +23,12 @@ Go and visit the book's home planet: http://www.obeythetestinggoat.com/
 
   http://127.0.0.1:8000/
 
-## Useful Commands
+## Run Tests
 
-* Running the Django dev server
-
-        python3 manage.py runserver
-
-* Running the functional tests
+* Run the functional tests
 
         python3 manage.py test functional_tests
 
-* Running the unit tests
+* Run the unit tests
 
         python3 manage.py test lists
