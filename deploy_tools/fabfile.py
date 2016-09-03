@@ -1,6 +1,7 @@
 from fabric.contrib.files import append, exists, sed
 from fabric.api import env, local, run
-import random, datetime
+from datetime import datetime
+import random
 
 REPO_URL = 'https://github.com/gesellc/tdd-with-python'
 
@@ -64,8 +65,8 @@ def _update_database(source_folder):
 
 def _set_deployment_time_stamp(source_folder):
     base_template = source_folder + '/lists/templates/base.html'
-    timestamp = '{:%Y-%b-%d %H:%M:%S}'.format(datetime.datetime.now())
-    sed(base_template, "DEPLOYMENT_TIMESTAMP", "%s UTC" % (timestamp,))
+    timestamp = '{:%Y--%m--%d %H:%M:%S UTC}'.format(datetime.utcnow())
+    sed(base_template, "DEPLOYMENT_TIMESTAMP", "%s" % (timestamp,))
 
 def _restart_server(site_name):
     run('sudo service nginx reload')
