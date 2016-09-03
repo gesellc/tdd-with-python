@@ -65,7 +65,7 @@ def _update_database(source_folder):
 def _set_deployment_time_stamp(source_folder):
     base_template = source_folder + '/lists/templates/base.html'
     timestamp = '{:%Y-%b-%d %H:%M:%S}'.format(datetime.datetime.now())
-    sed(base_template, "DEPLOYMENT_TIMESTAMP", "%s" % (timestamp,))
+    sed(base_template, "DEPLOYMENT_TIMESTAMP", "%s UTC" % (timestamp,))
 
 def _restart_server(site_name):
     run('sudo service nginx reload')
