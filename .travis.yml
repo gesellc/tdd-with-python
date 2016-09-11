@@ -12,13 +12,13 @@ env:
 before_install:
   - openssl aes-256-cbc -K $encrypted_884abc9aece8_key -iv $encrypted_884abc9aece8_iv -in deploy_tools/deploy_key.enc -out deploy_tools/deploy_key -d
 
-cache: pip
-
 install:
   - pip install 'django<1.9'
   - pip install --upgrade selenium
   - pip install coveralls
   - pip2 install fabric
+
+cache: pip
 
 before_script:
   - export DISPLAY=:99.0
