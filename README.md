@@ -2,7 +2,7 @@
 
 In this repository I will work through Harry J.W. Percival's book "Test-Driven Development with Python".
 
-Go and visit the book's home planet: http://www.obeythetestinggoat.com/
+Go and visit the book's home planet: http://www.obeythetestinggoat.com/ !
 
 ## Check Status
 
