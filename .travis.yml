@@ -11,9 +11,9 @@ env:
 
 before_install:
   - openssl aes-256-cbc -K $encrypted_884abc9aece8_key -iv $encrypted_884abc9aece8_iv -in deploy_tools/deploy_key.enc -out deploy_tools/deploy_key -d
-  - wget https://github.com/mozilla/geckodriver/releases/download/v0.14.0/geckodriver-v0.14.0-linux64.tar.gz
+  - wget https://github.com/mozilla/geckodriver/releases/download/v0.19.0/geckodriver-v0.19.0-linux64.tar.gz
   - mkdir geckodriver
-  - tar -xzf geckodriver-v0.14.0-linux64.tar.gz -C geckodriver
+  - tar -xzf geckodriver-v0.19.0-linux64.tar.gz -C geckodriver
   - export PATH=$PATH:$PWD/geckodriver
 
 install:
