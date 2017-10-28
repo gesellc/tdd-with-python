@@ -62,12 +62,12 @@ class ItemValidationTest(FunctionalTest):
         self.browser.get(self.server_url)
         self.get_item_input_box().send_keys('')
         self.get_item_input_box().send_keys(Keys.ENTER)
-        error = self._get_error_element()
+        error = self.wait_for(lambda: self._get_error_element())
         self.assertTrue(error.is_displayed())
 
         # She starts typeing in the input box to clear the error
         self.get_item_input_box().send_keys('a')
 
         # She is pleased to see that the error message dissappears
-        error = self._get_error_element()
+        error = self.wait_for(lambda: self._get_error_element())
         self.assertFalse(error.is_displayed())
