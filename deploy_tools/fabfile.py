@@ -5,7 +5,7 @@ import random
 
 REPO_URL = 'https://github.com/gesellc/tdd-with-python'
 
-print env.key_filename
+print(env.key_filename)
 
 def deploy():
     site_folder = '/home/%s/sites/%s' % (env.user, env.host)
