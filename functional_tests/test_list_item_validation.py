@@ -27,7 +27,6 @@ class ItemValidationTest(FunctionalTest):
         self.wait_for_row_in_list_table('1: Buy milk')
 
         # Perversely, she now decides to submit a second blank list item
-        self.get_item_input_box().send_keys('')
         self.get_item_input_box().send_keys(Keys.ENTER)
 
         # She receives a similar warning on the list page

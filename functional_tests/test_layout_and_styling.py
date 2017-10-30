@@ -21,7 +21,7 @@ class LayoutAndStylingTest(FunctionalTest):
         # centered there too
         inputbox.send_keys('testing')
         inputbox.send_keys(Keys.ENTER)
-        time.sleep(1)
+        self.wait_for_row_in_list_table('1: testing')
         inputbox = self.get_item_input_box()
         self.assertAlmostEqual(
             inputbox.location['x'] + inputbox.size['width'] / 2,

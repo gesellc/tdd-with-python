@@ -30,10 +30,9 @@ class NewVisitorTest(FunctionalTest):
         # and now the page lists "1: Buy peacock feathers" as an item in a
         # to-do list table
         inputbox.send_keys(Keys.ENTER)
-        time.sleep(1)
+        self.wait_for_row_in_list_table('1: Buy peacock feathers')
         edith_list_url = self.browser.current_url
         self.assertRegex(edith_list_url, '/lists/.+')
-        self.wait_for_row_in_list_table('1: Buy peacock feathers')
 
         # There is still a text box inviting her to add another item. She
         # enters "Use peacock feathers to make a fly" (Edith is very
@@ -67,7 +66,7 @@ class NewVisitorTest(FunctionalTest):
         inputbox.send_keys(Keys.ENTER)
 
         # Francis gets his own unique URL
-        time.sleep(1)
+        self.wait_for_row_in_list_table('1: Buy milk')
         francis_list_url = self.browser.current_url
         self.assertRegex(francis_list_url, '/lists/.+')
         self.assertNotEqual(francis_list_url, edith_list_url)
