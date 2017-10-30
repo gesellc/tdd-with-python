@@ -2,7 +2,6 @@ from unittest import skip
 from .base import FunctionalTest
 from selenium.webdriver.common.keys import Keys
 import unittest
-import time
 
 class ItemValidationTest(FunctionalTest):
 
