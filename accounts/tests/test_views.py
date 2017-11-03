@@ -22,3 +22,4 @@ class SendLoginEmailViewTest(TestCase):
         self.assertEqual(subject, 'Your login link for Superlists')
         self.assertEqual(from_email, 'noreply@superlists')
         self.assertEqual(to_list, ['edith@example.com'])
+
