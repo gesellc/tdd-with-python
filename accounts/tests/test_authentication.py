@@ -25,4 +25,19 @@ class AuthenticationTest(TestCase):
         existing_user = User.objects.create(email=email)
         user = PasswordlessAuthenticationBackend().authenticate(token.uid)
         self.assertEqual(user, existing_user)
+
+class GetUserTest(TestCase):
+
+    def test_returns_none_if_user_does_not_exist(self):
+        user = PasswordlessAuthenticationBackend().get_user('no-such-email')
+        self.assertIsNone(user)
+
+    def test_gets_user_by_email(self):
+        email ='edith@example.com'
+        desired_user = User.objects.create(email=email)
+        User.objects.create(email='another@example.com')
+
+        user = PasswordlessAuthenticationBackend().get_user(email)
+        
+        self.assertEqual(user, desired_user)
         
